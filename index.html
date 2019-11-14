@@ -16,10 +16,14 @@
   <!-- Custom fonts for this template -->
   <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
   <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet"
+    type="text/css">
 
   <!-- Custom styles for this template -->
   <link href="css/landing-page.min.css" rel="stylesheet">
+
+  <!-- Custom user styles -->
+  <link href="css/style.css" rel="stylesheet">
 
 </head>
 
@@ -28,32 +32,64 @@
   <!-- Navigation -->
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-      <a class="navbar-brand" href="#">Start Bootstrap</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
+      <a class="navbar-brand janda" href="#">Bald ist Silvester!!!</a>
+      <a class="btn btn-primary" href="#">Wir sind dabei</a>
     </div>
   </nav>
 
   <!-- Masthead -->
-  <header class="masthead text-white text-center">
+  <header class="masthead text-white text-center header">
     <div class="overlay"></div>
     <div class="container">
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email...">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
-              </div>
-            </div>
-          </form>
-        </div>
+      <div class="row justify-content-center">
+
+        <!-- Countdown -->
+        <!--<div class="col-md-10 col-lg-8 col-xl-7 mx-auto">-->
+        <div id="days" class="col-1 bg-countdown"></div>
+        <div id="hours" class="col-1 bg-countdown"></div>
+        <div id="minutes" class="col-1 bg-countdown"></div>
+        <div id="seconds" class="col-1 bg-countdown"></div>
+
+
+
+        <script>
+          // Set the date we're counting down to
+          var countDownDate = new Date("Dec 31, 2019 11:00:00").getTime();
+
+          // Update the count down every 1 second
+          var x = setInterval(function () {
+
+            // Get today's date and time
+            var now = new Date().getTime();
+
+            // Find the distance between now and the count down date
+            var distance = countDownDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in an element with id="demo"
+            document.getElementById("days").innerHTML = days;
+            document.getElementById("hours").innerHTML = hours;
+            document.getElementById("minutes").innerHTML = minutes;
+            document.getElementById("seconds").innerHTML = seconds;
+
+            // If the count down is over, write some text 
+            if (distance < 0) {
+              clearInterval(x);
+              document.getElementById("demo").innerHTML = "JUHUUUU";
+            }
+          }, 1000);
+        </script>
+        <!-- Countdown End -->
+
+
+
       </div>
+    </div>
     </div>
   </header>
 
@@ -63,29 +99,29 @@
       <div class="row">
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
+            <div class="features-icons-icon d-flex icon-div">
+              <img class="icon" src="C:\Users\Vivi\Desktop\Projekte\silvesterLP\img\iconclock.png"></img>
             </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
+            <h3>Wann?</h3>
+            <p class="lead mb-0">Ab 31. Dezember gegen 11.00 Uhr heißen wir euch willkommen!</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
+            <div class="features-icons-icon d-flex icon-div">
+              <img class="icon" src="C:\Users\Vivi\Desktop\Projekte\silvesterLP\img\iconplace.png"></img>
             </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
+            <h3>Wo?</h3>
+            <p class="lead mb-0">In den Hundert Ruten 3 in 39291 Lostau</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
+            <div class="features-icons-icon d-flex icon-div">
+              <img class="icon" src="C:\Users\Vivi\Desktop\Projekte\silvesterLP\img\iconfireworks.png"></img>
             </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
+            <h3>Was?</h3>
+            <p class="lead mb-0">Die geilste Silvesterparty, die man mit Kindern feiern kann!</p>
           </div>
         </div>
       </div>
@@ -97,53 +133,129 @@
     <div class="container-fluid p-0">
       <div class="row no-gutters">
 
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-1.jpg');"></div>
+        <video class="col-lg-6 order-lg-2 text-white showcase-img" src="img/bg-showcase-1.mp4" autoplay loop
+          muted></video>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Fully Responsive Design</h2>
-          <p class="lead mb-0">When you use a theme created by Start Bootstrap, you know that the theme will look great on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</p>
+          <h2>Zusammen ins neue Jahr</h2>
+          <p class="lead mb-0">Silvester steht vor der Tür und wir wollen gemeinsam mit euch einen wundervollen Tag,
+            Abend und eine fabelhafte Nacht verbringen.
+            Ihr könnt dann so lange bleiben, wie ihr wollt!
+          </p>
         </div>
       </div>
       <div class="row no-gutters">
         <div class="col-lg-6 text-white showcase-img" style="background-image: url('img/bg-showcase-2.jpg');"></div>
         <div class="col-lg-6 my-auto showcase-text">
-          <h2>Updated For Bootstrap 4</h2>
-          <p class="lead mb-0">Newly improved, and full of great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</p>
+          <h2>Ablauf</h2>
+          <p class="lead mb-0">Solltet ihr vormittags um elf kommen, können die Männer mit den Kindern verrückte
+            Outdoor-Abenteuer erleben und die Frauen machen die Besorgungen.
+            Wir lassen alles entspannt angehen und racletten am Abend. Danach können wir feuerwerken!
+          </p>
         </div>
       </div>
       <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('img/bg-showcase-3.jpg');"></div>
+        <div class="col-lg-6 order-lg-2 text-white showcase-img"
+          style="background-image: url('img/bg-showcase-3.jpg');"></div>
         <div class="col-lg-6 order-lg-1 my-auto showcase-text">
-          <h2>Easy to Use &amp; Customize</h2>
-          <p class="lead mb-0">Landing Page is just HTML and CSS with a splash of SCSS for users who demand some deeper customization options. Out of the box, just add your content and images, and your new landing page will be ready to go!</p>
+          <h2>Unterbringung &amp; Kinder</h2>
+          <p class="lead mb-0">Auch wenn wir erst nächstes Jahr unser OG bekommen, haben wir jetzt schon genügend Platz
+            für jeden. Die Berliner bekommen das Schlafzimmer, die großen Kinder
+            das Kinderzimmer und wir schlafen im Wohnzimmer. Sollte es wider Erwarten zu eng werden, können wir auch
+            noch uns oder unsere Kinder ins Nachbarhaus auslagern.
+          </p>
         </div>
       </div>
     </div>
   </section>
 
+  <!--Slider-->
+  <div class="bd-example">
+    <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Anni</h5>
+            <p>"Das wird die Party des Jahrhunderts!"</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="..." class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Second slide label</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="img/testimonials-1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Third slide label</h5>
+            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  </div>
+
   <!-- Testimonials -->
   <section class="testimonials text-center bg-light">
     <div class="container">
-      <h2 class="mb-5">What people are saying...</h2>
+      <h2 class="mb-5">Wer ist dabei?</h2>
       <div class="row">
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-            <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"This is fantastic! Thanks so much guys!"</p>
+            <h5>Anni</h5>
+            <p class="font-weight-light mb-0 janda">"Das wird die Party des Jahrhunderts!"</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-            <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"Bootstrap is amazing. I've been using it to create lots of super nice landing pages."</p>
+            <h5>Mike</h5>
+            <p class="font-weight-light mb-0 janda">"Ich kann es gar nicht mehr erwarten!"</p>
           </div>
         </div>
         <div class="col-lg-4">
           <div class="testimonial-item mx-auto mb-5 mb-lg-0">
             <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-            <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"Thanks so much for making these free resources available to us!"</p>
+            <h5>Amelie, Milena und Matti</h5>
+            <p class="font-weight-light mb-0 janda">"Wir freuen uns so sehr auf Leo und Pippa!"</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-4.jpg" alt="">
+            <h5>Vivi</h5>
+            <p class="font-weight-light mb-0 janda">"Das wird meeega!"</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-5.jpg" alt="">
+            <h5>Flo</h5>
+            <p class="font-weight-light mb-0 janda">"Das wird eine fette Party!"</p>
+          </div>
+        </div>
+        <div class="col-lg-4">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-6.jpg" alt="">
+            <h5>Leo und Pippa</h5>
+            <p class="font-weight-light mb-0 janda">"Wir freuen uns riesig, die anderen endlich wieder zu sehen!"
+            </p>
           </div>
         </div>
       </div>
@@ -156,7 +268,7 @@
     <div class="container">
       <div class="row">
         <div class="col-xl-9 mx-auto">
-          <h2 class="mb-4">Ready to get started? Sign up now!</h2>
+          <h2 class="mb-4">Seid ihr dabei? Dann gleich anmelden!</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
@@ -220,6 +332,10 @@
       </div>
     </div>
   </footer>
+
+  <!-- custom JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.16.1/TweenMax.min.js"></script>
+  <script src="js/script.js"></script>
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>
