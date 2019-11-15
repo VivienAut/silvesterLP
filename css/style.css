@@ -48,6 +48,14 @@ h2{
 }
 
 .call-to-action {
-        background: url("../img/bg-end.jpg") no-repeat center center;
-   
+        background: url("../img/bg-end.jpg") no-repeat center center;   
+}
+
+.button{
+    background-color:#9E79AD ;
+    border-color:#9E79AD ;
+}
+
+.end{
+    text-shadow: 1px 1px #874976, -1px -1px #874976, -1px 1px #874976, 1px -1px #874976;
 }
